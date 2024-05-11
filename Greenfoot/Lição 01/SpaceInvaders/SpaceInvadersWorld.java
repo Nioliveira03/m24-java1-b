@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SpaceInvadersWorld extends World
 {
-
+    private Bala bala = null;
     /**
      * Constructor for objects of class SpaceInvadersWorld.
      * 
@@ -30,5 +30,24 @@ public class SpaceInvadersWorld extends World
         alien.setLocation(419,40);
         Nave nave = new Nave();
         addObject(nave,417,557);
+    }
+    
+    public Bala getBala(){
+        return bala;
+    }
+    
+    public void criarBala (int pX, int pY){
+        if (bala == null){
+            bala = new Bala();
+            addObject(bala, pX, pY);   
+        }
+    }
+    
+    public void removerBala(){
+        if(bala != null){
+            removeObject(bala);
+            bala = null;
+            
+        }
     }
 }

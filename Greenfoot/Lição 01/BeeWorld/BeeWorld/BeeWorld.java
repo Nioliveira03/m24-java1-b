@@ -10,8 +10,7 @@ public class BeeWorld extends World
 {
     //Campos e fields
     private Abelha abelha = null;
-    private int score;
-    private Placar placar = null;
+    
     /**
      * Constructor da Classe BeeWorld.
      * 
@@ -27,7 +26,7 @@ public class BeeWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare() 
+    private void prepare()
     {
         abelha = new Abelha();
         addObject(abelha,50,60);
@@ -44,21 +43,11 @@ public class BeeWorld extends World
             //Adicionando no mundo e criando a mosca ao mesmo tempo
             addObject(new Mosca(vel,ang), pX, pY);
         }
-        //Criando o placar no mundo
-        placar = new Placar();
-        addObject(placar, 750, 20);
-        
     }
     /**
      * getter para obter a instância da abelha criada no mundo.
      */
     public Abelha getAbelha(){
         return abelha;
-    }
-    
-    public void addScore(int value){
-        score+= value; // score = score = value
-        placar.setTexto("Score: " + score); 
-        
     }
 }

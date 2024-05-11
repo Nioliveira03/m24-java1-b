@@ -20,7 +20,8 @@ public class Bala extends Actor
         removerAlien();
         //se atingiu  o alien, removemos e criamos um novo alien
         if (isAtEdge()){
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
+            ((SpaceInvadersWorld) getWorld()).removerBala();
         }
          
         
