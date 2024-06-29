@@ -3,13 +3,15 @@ package br.com.senaisp.bauru.nicoly.licao07;
 public class TesteZoo {
 
 	public static void main(String[] args) {
-		Mamifero mam = new Cachorro ();
+		Mamifero mam = new Gato(5, "Neko");
 		mam.setCor("Caramelo");
 		mam.setNome("Totó");
 		mam.setIdade(3);
-		((Cachorro) mam).setQuadrupede(true);
+		//testa se o mam é um cachorro
+		if (mam instanceof Cachorro) {
+			((Cachorro) mam).setQuadrupede(true);
+		}
 		mam.falar();
 		System.out.println(mam.toString());
 	}
-
 }
